@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Peer from "simple-peer";
-import { cred } from '../credential';
+// import { cred } from '../credential';
 import { socket, myID, otherPlayerID, playerNumber } from './socket';
 
 
@@ -40,12 +40,12 @@ function VideoCall() {
               {
                   urls: "stun:numb.viagenie.ca",
                   username: "adnanahmed.indian@gmail.com",
-                  credential: cred
+                  credential: 'passNUMB@123'
               },
               {
                   urls: "turn:numb.viagenie.ca",
                   username: "adnanahmed.indian@gmail.com",
-                  credential: cred
+                  credential: 'passNUMB@123'
               }
           ]
       },
