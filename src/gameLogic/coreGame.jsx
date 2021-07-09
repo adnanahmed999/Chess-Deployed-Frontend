@@ -37,6 +37,8 @@ function CoreGame() {
     alert('Check!!!')
   }
 
+  console.log("turn", turn)
+
   return (
     <div className="container">
       <div>
@@ -46,8 +48,12 @@ function CoreGame() {
           </h2>
         )}
         <div>
-          <button className="btn btn-success mb-4" onClick={handleReset}>Reset Game</button>
-          {game.turn==='w'? <b>White's Turn</b> : <b>Black's Turn </b>}
+          <div className='make-center'>
+            <button className="btn btn-success mb-4" onClick={handleReset}>Reset Game</button>
+          </div>
+          <div>
+            {turn==='w'? <h1>White's Turn</h1> : <h1>Black's Turn </h1>}
+          </div>
         </div>
       </div>
       <div className="board-container">
