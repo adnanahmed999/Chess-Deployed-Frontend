@@ -81,7 +81,7 @@ export default function MainPage() {
         <div id="gameScreen" className="h-100">
           <div className="d-flex flex-column align-items-center justify-content-center h-100">
             <h1>
-              The game code is: <span id="gameCodeDisplay">{roomName}</span>
+              The game code: <span id="gameCodeDisplay">{roomName}</span>
             </h1>
             <button className="btn btn-success" onClick={reload}> Main Page </button>
           </div>
