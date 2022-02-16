@@ -1,6 +1,6 @@
 import io from 'socket.io-client'
 
-const ENDPOINT = "https://multiplayer-chess-server.herokuapp.com/";
+const ENDPOINT = `${process.env.REACT_APP_BACKEND_URL}`;
 
 const socket = io(ENDPOINT);
 
