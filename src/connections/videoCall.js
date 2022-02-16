@@ -31,24 +31,22 @@ function VideoCall() {
   }, []);
 
   function callPeer(id) {
-      const peer = new Peer({
-        initiator: true,
-        trickle: false,
-        config: {
-  
-          iceServers: [
-              {
-                  urls: "stun:numb.viagenie.ca",
-                  username: "adnanahmed.indian@gmail.com",
-                  credential: "12345678"
-                  
-              },
-              {
-                  urls: "turn:numb.viagenie.ca",
-                  username: "adnanahmed.indian@gmail.com",
-                  credential: "12345678"
-              }
-          ]
+    const peer = new Peer({
+      initiator: true,
+      trickle: false,
+      config: {
+        iceServers: [
+          {
+            urls: `${process.env.REACT_APP_STUN_URL}`,
+            username: `${process.env.REACT_APP_STUN_USERNAME}`,
+            credential: `${process.env.REACT_APP_STUN_CREDENTIAL}`,
+          },
+          {
+            urls: `${process.env.REACT_APP_TURN_URL}`,
+            username: `${process.env.REACT_APP_TURN_USERNAME}`,
+            credential: `${process.env.REACT_APP_TURN_CREDENTIAL}`,
+          },
+        ],
       },
         stream: stream,
       });
@@ -74,21 +72,19 @@ function VideoCall() {
       initiator: false,
       trickle: false,
       config: {
-
         iceServers: [
-            {
-                urls: "stun:numb.viagenie.ca",
-                username: "adnanahmed.indian@gmail.com",
-                credential: "12345678"
-                
-            },
-            {
-                urls: "turn:numb.viagenie.ca",
-                username: "adnanahmed.indian@gmail.com",
-                credential: "12345678"
-            }
-        ]
-    },
+          {
+            urls: `${process.env.REACT_APP_STUN_URL}`,
+            username: `${process.env.REACT_APP_STUN_USERNAME}`,
+            credential: `${process.env.REACT_APP_STUN_CREDENTIAL}`,
+          },
+          {
+            urls: `${process.env.REACT_APP_TURN_URL}`,
+            username: `${process.env.REACT_APP_TURN_USERNAME}`,
+            credential: `${process.env.REACT_APP_TURN_CREDENTIAL}`,
+          },
+        ],
+      },
       stream: stream,
     });
     peer.on("signal", data => {
