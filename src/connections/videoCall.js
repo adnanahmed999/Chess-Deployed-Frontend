@@ -73,6 +73,22 @@ function VideoCall() {
     const peer = new Peer({
       initiator: false,
       trickle: false,
+      config: {
+
+        iceServers: [
+            {
+                urls: "stun:numb.viagenie.ca",
+                username: "adnanahmed.indian@gmail.com",
+                credential: "12345678"
+                
+            },
+            {
+                urls: "turn:numb.viagenie.ca",
+                username: "adnanahmed.indian@gmail.com",
+                credential: "12345678"
+            }
+        ]
+    },
       stream: stream,
     });
     peer.on("signal", data => {
